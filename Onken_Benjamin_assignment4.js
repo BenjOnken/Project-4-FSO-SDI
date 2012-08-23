@@ -69,7 +69,8 @@ var myLibrary = function()
         	var whichWord = stringManipulate[numOfWords].charAt(0).toUpperCase();
         	stringManipulate[numOfWords] = whichWord + stringManipulate[numOfWords].substring(1);
     	};
-    	return stringManipulate.join(" ");
+    	stringC = stringManipulate.join(" ");
+    	return stringC;
 	};
 
 
@@ -131,5 +132,5 @@ console.log("URL Address = " + urlVerify);
 newLib.decimalPlace(129.9344);
 console.log("The number to 2 decimal places is " + decimalReturn);
 newLib.titleCaseString("hello i am a pretty sweet coder");
-console.log(stringManipulate);
+console.log(stringC);
 
