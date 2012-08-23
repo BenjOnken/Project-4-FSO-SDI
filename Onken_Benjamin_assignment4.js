@@ -7,6 +7,7 @@ var myLibrary = function()
 {
 
 //String Function Phone Number Pattern
+
 	var phoneNum = function(myPhoneNum)
 	{
 		var whiteSpace = myPhoneNum.indexOf(" ");
@@ -36,7 +37,7 @@ var myLibrary = function()
 	{
 
 	//	var lengthOfEmail = inputEmail.length+1;
-		check = /^[a-zA-Z0-9._%+-]+@{1}[a-zA-Z0-9-]+\.[a-zA-Z]{2,6}$/;
+		check = /^[a-zA-Z0-9._%+-]+@{1}[a-zA-Z0-9-]+\.[a-zA-Z]{2,11}$/;
 		emailChecker = check.test(inputEmail);
 
 		return emailChecker;
@@ -60,6 +61,16 @@ var myLibrary = function()
 
 //String Function Title-Case
 
+	var titleCaseString = function(inputString)
+	{
+    	stringManipulate = inputString.split(" ");
+    	for(var numOfWords = 0; numOfWords < stringManipulate.length; numOfWords++)
+    	{
+        	var whichWord = stringManipulate[numOfWords].charAt(0).toUpperCase();
+        	stringManipulate[numOfWords] = whichWord + stringManipulate[numOfWords].substring(1);
+    	};
+    	return stringManipulate.join(" ");
+	};
 
 
 //String Function 
@@ -67,6 +78,7 @@ var myLibrary = function()
 
 
 //Number Function
+
 	var decimalPlace = function(decimalNumber)
 	{
 		decimalReturn = decimalNumber.toFixed(2);
@@ -101,6 +113,7 @@ var myLibrary = function()
 		"phoneNum": phoneNum,
 		"emailAdd": emailAdd,
 		"urlChecker": urlChecker,
+		"titleCaseString": titleCaseString,
 		"decimalPlace": decimalPlace
 	};
 
@@ -117,4 +130,6 @@ newLib.urlChecker("https://www.google.com");
 console.log("URL Address = " + urlVerify);
 newLib.decimalPlace(129.9344);
 console.log("The number to 2 decimal places is " + decimalReturn);
+newLib.titleCaseString("hello i am a pretty sweet coder");
+console.log(stringManipulate);
 
