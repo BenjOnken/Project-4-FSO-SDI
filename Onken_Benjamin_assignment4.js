@@ -1,7 +1,8 @@
 /*
-
-
-
+Benjamin Onken
+8/23/2012
+Project 4
+Library
 */
 var myLibrary = function()
 {
@@ -35,8 +36,6 @@ var myLibrary = function()
 
 	var emailAdd = function(inputEmail)
 	{
-
-	//	var lengthOfEmail = inputEmail.length+1;
 		check = /^[a-zA-Z0-9._%+-]+@{1}[a-zA-Z0-9-]+\.[a-zA-Z]{2,11}$/;
 		emailChecker = check.test(inputEmail);
 
