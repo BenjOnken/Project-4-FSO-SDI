@@ -3,15 +3,23 @@
 
 
 */
-var whiteSpace = 0;
 var myLibrary = function()
 {
 
 //String Function Phone Number Pattern
 	var phoneNum = function(myPhoneNum)
 	{
-		whiteSpace = myPhoneNum.indexOf(" ");
-		if(whiteSpace = 0 && myPhoneNum.charAt(3) === "-" && myPhoneNum.charAt(7) === "-" && myPhoneNum.length == 12 && !isNaN(myPhoneNum.substring(0,2)) && !isNaN(myPhoneNum.substring(4,6)) && !isNaN(myPhoneNum.substring(8,11)))
+		var whiteSpace = myPhoneNum.indexOf(" ");
+		if(whiteSpace >= 0)
+		{
+			spaceOrNot = true;
+		}
+		else
+		{
+			spaceOrNot = false;
+		};
+
+		if(spaceOrNot == false && myPhoneNum.charAt(3) === "-" && myPhoneNum.charAt(7) === "-" && myPhoneNum.length == 12 && !isNaN(myPhoneNum.substring(0,2)) && !isNaN(myPhoneNum.substring(4,6)) && !isNaN(myPhoneNum.substring(8,11)))
 		{
  			return phoneVerify = true;
 		}
@@ -36,12 +44,19 @@ var myLibrary = function()
 
 
 //String Function URL
-/*
+
 	var urlChecker = function(inputURL)
 	{
-
-	}
-	*/
+		if(inputURL.substring(0,6) == "https:" || inputURL.substring(0,5) == "http:")
+		{
+			return urlVerify = true;
+		}
+		else
+		{
+			return urlVerify = false;
+		};
+	};
+	
 
 //String Function Title-Case
 
@@ -80,7 +95,8 @@ var myLibrary = function()
 //Returns
 	return {
 		"phoneNum": phoneNum,
-		"emailAdd": emailAdd
+		"emailAdd": emailAdd,
+		"urlChecker": urlChecker
 	};
 
 };
@@ -89,7 +105,9 @@ var newLib = new myLibrary();
 
 
 newLib.phoneNum("402-981-7446");
-console.log("Phone number = " + phoneVerify);
+console.log("Phone Number = " + phoneVerify);
 newLib.emailAdd("benj.o_nken@gmail.com");
 console.log("Email Address = " + emailChecker);
+newLib.urlChecker("https://www.google.com");
+console.log("URL Address = " + urlVerify);
 
