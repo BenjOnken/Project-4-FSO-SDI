@@ -97,6 +97,18 @@ var myLibrary = function()
 
 //Number Function
 
+	var stringToNum = function(stringOfNum)
+	{
+		if(isNaN(stringOfNum))
+		{
+			convertedNumber = "Cannot convert, not all items in the string are numbers.";
+		}
+		else
+		{
+			convertedNumber = Number(stringOfNum);
+			return convertedNumber;
+		};
+	};
 
 
 //Array Function
@@ -115,7 +127,8 @@ var myLibrary = function()
 		"emailAdd": emailAdd,
 		"urlChecker": urlChecker,
 		"titleCaseString": titleCaseString,
-		"decimalPlace": decimalPlace
+		"decimalPlace": decimalPlace,
+		"stringToNum": stringToNum
 	};
 
 };
@@ -133,4 +146,6 @@ newLib.decimalPlace(129.9344);
 console.log("The number to 2 decimal places is " + decimalReturn);
 newLib.titleCaseString("hello i am a pretty sweet coder");
 console.log(stringC);
+newLib.stringToNum("99021");
+console.log(convertedNumber);
 
