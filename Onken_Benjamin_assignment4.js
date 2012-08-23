@@ -116,7 +116,23 @@ var myLibrary = function()
 
 
 //Array Function
-
+	var arrayAddUp = function(inputArray) 
+	{
+        arrayTotal = 0;
+        for (var a = 0; a < inputArray.length; a++) 
+        {
+            if(isNaN(inputArray[a]) || inputArray[a] == true || inputArray[a] == false) 
+           	{
+             	arrayTotal += 0;   
+			}
+            else
+            {
+            	arrayTotal += inputArray[a];
+            };
+        };
+        arrayOutput = arrayTotal;
+        return arrayOutput;
+    };
 
 
 //Array Function
@@ -128,7 +144,8 @@ var myLibrary = function()
 		"urlChecker": urlChecker,
 		"titleCaseString": titleCaseString,
 		"decimalPlace": decimalPlace,
-		"stringToNum": stringToNum
+		"stringToNum": stringToNum,
+		"arrayAddUp": arrayAddUp
 	};
 
 };
@@ -148,4 +165,6 @@ newLib.titleCaseString("hello i am a pretty sweet coder");
 console.log(stringC);
 newLib.stringToNum("99021");
 console.log(convertedNumber);
+newLib.arrayAddUp([29, 4, 2, 5, true, false, "hello", true]);
+console.log(arrayOutput);
 
