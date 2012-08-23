@@ -67,7 +67,11 @@ var myLibrary = function()
 
 
 //Number Function
-
+	var decimalPlace = function(decimalNumber)
+	{
+		decimalReturn = decimalNumber.toFixed(2);
+		return decimalReturn;
+	};
 
 
 //Number Function
@@ -96,7 +100,8 @@ var myLibrary = function()
 	return {
 		"phoneNum": phoneNum,
 		"emailAdd": emailAdd,
-		"urlChecker": urlChecker
+		"urlChecker": urlChecker,
+		"decimalPlace": decimalPlace
 	};
 
 };
@@ -110,4 +115,6 @@ newLib.emailAdd("benj.o_nken@gmail.com");
 console.log("Email Address = " + emailChecker);
 newLib.urlChecker("https://www.google.com");
 console.log("URL Address = " + urlVerify);
+newLib.decimalPlace(129.9344);
+console.log("The number to 2 decimal places is " + decimalReturn);
 
