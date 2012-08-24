@@ -105,8 +105,8 @@ var myLibrary = function()
 		else
 		{
 			convertedNumber = Number(stringOfNum);
-			return convertedNumber;
 		};
+		return convertedNumber;
 	};
 
 
